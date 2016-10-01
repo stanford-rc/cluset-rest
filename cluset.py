@@ -43,15 +43,15 @@ def compute_nodeset(data):
         xset.update(nodeset)
     return xset
 
-@app.route("/fold/<data>")
+@app.route("/fold/<path:data>")
 def get_fold(data):
     return str(compute_nodeset(data))
 
-@app.route("/expand/<data>")
+@app.route("/expand/<path:data>")
 def get_expand(data):
     return ' '.join(compute_nodeset(data))
 
-@app.route("/count/<data>")
+@app.route("/count/<path:data>")
 def get_count(data):
     return "%d" % len(compute_nodeset(data))
 
