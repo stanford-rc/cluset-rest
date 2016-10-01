@@ -1,9 +1,13 @@
 #! /usr/bin/env python
 
-from flask import Flask
+from flask import Flask, render_template
 from ClusterShell.NodeSet import NodeSet
 
 app = Flask(__name__)
+
+@app.route("/")
+def get_fold():
+    return render_template('index.html')
 
 @app.route("/fold/<nodeset>")
 def get_fold(nodeset):
