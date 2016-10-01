@@ -27,6 +27,7 @@ app = Flask(__name__)
 @app.errorhandler(GroupResolverError)
 @app.errorhandler(NodeSetParseError)
 @app.errorhandler(RangeSetParseError)
+@app.errorhandler(UnicodeEncodeError)
 def handle_invalid_usage(error):
     response = jsonify(str(error))
     response.status_code = 400
