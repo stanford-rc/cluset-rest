@@ -37,6 +37,10 @@ $(document).ready(function() {
     $('#action-count').click(function() {
         display_result('count');
     })
+    $('#in').keypress(function(e){
+        if(e.keyCode==13)
+            $('#action-expand').click();
+    });
 });
 </script>
 </head>
