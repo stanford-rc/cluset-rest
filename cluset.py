@@ -30,8 +30,8 @@ def list_files(startpath):
         indent = ' ' * 4 * (level)
         print('{}{}/'.format(indent, os.path.basename(root)))
         subindent = ' ' * 4 * (level + 1)
-        for f in files:
-            print('{}{}'.format(subindent, f))
+        #for f in files:
+        #    print('{}{}'.format(subindent, f))
 
 list_files('/app')
 
