@@ -1,9 +1,10 @@
 body {
   background-color: #fff;
+  padding-top: 50px;
+  padding-bottom: 20px;
 }
 
-.col-center {
-  float: none !important;
-  margin-left: auto;
-  margin-right: auto;
+.col-centered {
+    float: none;
+    margin: 0 auto;
 }
