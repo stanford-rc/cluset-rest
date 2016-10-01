@@ -6,7 +6,7 @@ from ClusterShell.NodeSet import NodeSet
 app = Flask(__name__)
 
 @app.route("/")
-def get_fold():
+def get_home():
     return render_template('index.html')
 
 @app.route("/fold/<nodeset>")
