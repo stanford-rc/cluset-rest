@@ -23,7 +23,14 @@ function display_result(action) {
         if ( status == "success" ) {
             $('#result-header').text(action);
         } else {
-            $('#result-header').text('');
+            if (xhr.status == 404) {
+                $('#result-header').text('');
+            } else if (xhr.status == 400) {
+                $('#result-header').text('Error: ' + JSON.parse(response));
+            } else {
+                $('#result-header').text('Error ' + xhr.status);
+            }
+            $('#result-content').text('')
         }
     });
 }

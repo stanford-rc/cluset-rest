@@ -18,9 +18,19 @@
 
 
 from flask import Flask, render_template
-from ClusterShell.NodeSet import NodeSet
+from flask import jsonify
+from ClusterShell.NodeUtils import GroupResolverError
+from ClusterShell.NodeSet import NodeSet, NodeSetParseError, RangeSetParseError
 
 app = Flask(__name__)
+
+@app.errorhandler(GroupResolverError)
+@app.errorhandler(NodeSetParseError)
+@app.errorhandler(RangeSetParseError)
+def handle_invalid_usage(error):
+    response = jsonify(str(error))
+    response.status_code = 400
+    return response
 
 @app.route("/")
 def get_home():
