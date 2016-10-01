@@ -64,7 +64,8 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <p>Welcome to the RESTful API to ClusterShell NodeSet class (cluset/nodeset CLI).</p>
+        <h1>Welcome</h1>
+        <p>RESTful API to ClusterShell NodeSet class (cluset/nodeset CLI).</p>
         <p><a class="btn btn-primary btn-lg" href="http://cea-hpc.github.io/clustershell/" role="button">Learn more &raquo;</a></p>
       </div>
     </div>
@@ -85,12 +86,22 @@
         <div class="col-md-4">
           <h2>Expand</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Nodes" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Fold</button>
+          </form>
        </div>
         <div class="col-md-4">
           <h2>Count</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Node Set" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Count</button>
+          </form>
         </div>
       </div>
 
