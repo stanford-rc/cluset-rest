@@ -1,11 +1,45 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClusterShell NodeSet REST API</title>
+
+<script src="/static/jquery-3.1.1.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+
 <!-- Bootstrap CDN -->
 <link href="/static/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
 <!-- Custom styles for this template -->
 <link href="/static/cluset.css" rel="stylesheet">
+
+<script type="text/javascript">
+function display_result(action) {
+    var tbcontent = encodeURIComponent($('#in').val());
+    $('#result-content').load('/' + action + '/' + tbcontent, function(response, status, xhr) {
+        if ( status == "success" ) {
+            $('#result-header').text(action);
+        } else {
+            $('#result-header').text('');
+        }
+    });
+}
+$(document).ready(function() {
+    $('#action-expand').click(function() {
+        display_result('expand');
+    })
+    $('#action-fold').click(function() {
+        display_result('fold');
+    })
+    $('#action-count').click(function() {
+        display_result('count');
+    })
+});
+</script>
+</head>
 
 <body>
 
@@ -13,13 +47,23 @@
 
     <div class="row">
         <div class="col-xs-6 col-xs-offset-3">
-        NodeSet REST API
             <div class="input-group">
-            <input type="text" class="form-control" /> <span class="input-group-btn">
-            <button class="btn btn-default" type="button" id="action-expand">expand</button>
+            <input type="text" class="form-control" id='in' /> <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="action-expand">expand</button>
                 <button class="btn btn-default" type="button" id="action-fold">fold</button>
-                <button class="btn btn-default" type="button" id="action-fold">count</button></span>
+                <button class="btn btn-default" type="button" id="action-count">count</button></span>
             </div>
         </div>
     </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+          <h2 id="result-header"></h2>
+          <p id="result-content"></p>
+        </div>
+      </div>
+    </div>
+
 </body>
+</html>

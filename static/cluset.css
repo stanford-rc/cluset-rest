@@ -1,6 +1,6 @@
 body {
   background-color: #fff;
-  padding-top: 50px;
+  padding-top: 80px;
   padding-bottom: 20px;
 }
 
@@ -8,3 +8,10 @@ body {
     float: none;
     margin: 0 auto;
 }
+
+.btn-group-wrap {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#result-header { color: lightgray; }
