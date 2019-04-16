@@ -1,6 +1,6 @@
-ClusterShell==1.7.2
+ClusterShell==1.8.1
 Flask==0.11.1
-Jinja2==2.8
+Jinja2==2.8.1
 MarkupSafe==0.23
 Werkzeug==0.11.11
 click==6.6
